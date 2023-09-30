@@ -1,0 +1,19 @@
+{
+  "masUsers": [
+    {
+      "id": 0,
+      "login": "admin",
+      "password": "admin",
+      "email": "admin@gmail.com"
+    }
+  ],
+  "curMess": [
+    {
+      "id": 0,
+      "userID": 0,
+      "dateTime": "2023-09-30T18:13:02.173Z",
+      "title": "First post",
+      "message": "Sign up to create your account and start to use Angular Blog"
+    }
+  ]
+}

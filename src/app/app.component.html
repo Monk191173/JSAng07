@@ -1,0 +1,26 @@
+<div class="container">
+
+  <nav class="navbar bg-dark rounded-1 position-sticky top-0 start-0 z-1">
+    <div class="container-fluid">
+      <a class="navbar-brand text-secondary">Angular Blog</a>
+      <div *ngIf="!logined">
+        <button class="btn btn-outline-success rounded-start-5 " data-bs-target="#exampleModalToggle"
+          data-bs-toggle="modal">Sign In</button>
+        <button class="btn btn-outline-primary rounded-end-5 " data-bs-target="#exampleModalToggle1"
+          data-bs-toggle="modal">Sign Up</button>
+      </div>
+      <div *ngIf="logined">
+        <button class="btn btn-outline-success  border-end-0 rounded-start-5" data-bs-target="#exampleModalToggle2"
+          data-bs-toggle="modal">Add post</button>
+        <button class="btn btn-outline-warning text-bg-warning rounded-0" disabled>{{curLogin}}</button>
+        <button class="btn btn-outline-primary border-start-0 rounded-end-5" (click)="logOut()">Sign out</button>
+      </div>
+    </div>
+  </nav>
+
+  <app-main></app-main>
+  <app-sign-in></app-sign-in>
+  <app-sign-up></app-sign-up>
+  <app-add-post></app-add-post>
+
+</div>

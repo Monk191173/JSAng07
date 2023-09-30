@@ -1,0 +1,38 @@
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Sign In</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" autocomplete="off" name="sign-form" class="w-100">
+                    <h1>Please enter user data for login</h1>
+
+                    <label for="email">Email</label>
+                    <div class="email" [ngClass]="mailStyle">
+                        <span>Enter email</span>
+                        <input [ngClass]="['bas-input','email-input']" type="email" name="email"
+                            placeholder="Enter email" [(ngModel)]="eVal" [style.outlineColor]="eOutColor"
+                            [maxLength]="maxLengthE" #eInput (focus)="mailFocus()" (input)="mailInput()" required>
+                    </div>
+
+                    <label for="password">Password</label>
+                    <div class="password" [ngClass]="pasStyle">
+                        <span>Enter password</span>
+                        <input [ngClass]="['bas-input','password-input']" type="password" name="password"
+                            placeholder="Enter password" [(ngModel)]="pVal" [style.outlineColor]="pOutColor"
+                            [maxLength]="maxLengthP" #pInput (focus)="pasFocus()" (input)="pasInput()" required>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close" #clBut>Close</button>
+                <button class="btn btn-primary" [disabled]="addEnabled" [ngStyle]="{cursor}" #subBut
+                    (click)="logIn(eVal,pVal)">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

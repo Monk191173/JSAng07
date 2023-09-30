@@ -1,0 +1,17 @@
+<div *ngIf="ServUser.curUserLogin!=''">
+    <div *ngFor="let mess of CurMess" class="card mt-2">
+        <div class="card-header d-flex justify-content-between text-secondary">
+            <div>Posted by: {{getUserNameByID(mess.userID)}}</div>
+            <div>{{mess.dateTime | date:'HH:mm:ss dd.MM.YYYY'}}</div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{mess.title}}</h5>
+            <p class="card-text">{{mess.message}}</p>
+            <div *ngIf="testUserRole(mess)" class="d-flex justify-content-end">
+                <button class="btn btn-warning mx-2" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                    (click)="editMess(mess.id)">Edit</button>
+                <button class="btn btn-danger" (click)="delMess(mess.id)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
